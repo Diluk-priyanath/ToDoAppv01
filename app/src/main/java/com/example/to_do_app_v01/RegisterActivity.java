@@ -40,5 +40,13 @@ public class RegisterActivity extends AppCompatActivity {
             }
         });
 
+        create.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // To be implemented
+            }
+        });
+
+
     }
 }
