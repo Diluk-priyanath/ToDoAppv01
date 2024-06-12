@@ -43,9 +43,25 @@ public class RegisterActivity extends AppCompatActivity {
         create.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String user = userName.getText().toString();
+                String pass = password.getText().toString();
+                String confirmPass = confirmPassword.getText().toString();
+                String mail = email.getText().toString();
+
+                if (user.isEmpty() || pass.isEmpty() || confirmPass.isEmpty() || mail.isEmpty()) {
+                    Toast.makeText(RegisterActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
+                if (!pass.equals(confirmPass)) {
+                    Toast.makeText(RegisterActivity.this, "Passwords do not match", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+
                 // To be implemented
             }
         });
+
 
 
     }
