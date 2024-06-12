@@ -15,6 +15,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
+    TextView login;
+    EditText userName, password, confirmPassword, email;
+    Button create;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
