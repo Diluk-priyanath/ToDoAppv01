@@ -58,7 +58,19 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 }
 
-                // To be implemented
+                SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putString("Username", user);
+                editor.putString("Password", pass);
+                editor.putString("Email", mail);
+                editor.apply();
+
+                Toast.makeText(RegisterActivity.this, "User registered successfully", Toast.LENGTH_SHORT).show();
+
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+
             }
         });
 
