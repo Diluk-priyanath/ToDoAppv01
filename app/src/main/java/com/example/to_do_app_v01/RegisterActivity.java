@@ -30,5 +30,15 @@ public class RegisterActivity extends AppCompatActivity {
         confirmPassword = findViewById(R.id.confpassword);
         email = findViewById(R.id.email);
         create = findViewById(R.id.btn_rg);
+
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+
     }
 }
