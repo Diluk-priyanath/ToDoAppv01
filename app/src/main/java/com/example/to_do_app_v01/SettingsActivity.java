@@ -93,5 +93,53 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
 
+    private void showEditInfoDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomAlertDialog);
+
+        LayoutInflater inflater = this.getLayoutInflater();
+        View dialogView = inflater.inflate(R.layout.update_info, null);
+        builder.setView(dialogView);
+
+        final EditText editTextNewUsername = dialogView.findViewById(R.id.NewUsername);
+        final EditText editTextNewEmail = dialogView.findViewById(R.id.NewEmail);
+
+        editTextNewUsername.setText(registerUsername);
+        editTextNewEmail.setText(email);
+
+        builder.setTitle("Edit Info")
+                .setPositiveButton("Update", (dialog, id) -> {
+                    String newUsername = editTextNewUsername.getText().toString().trim();
+                    String newEmail = editTextNewEmail.getText().toString().trim();
+
+                    if (!newUsername.isEmpty() && !newEmail.isEmpty()) {
+                        registerUsername = newUsername;
+                        email = newEmail;
+
+                        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.putString("Username", newUsername);
+                        editor.putString("Email", newEmail);
+                        editor.apply();
+
+                        binding.editUsername.setText(newUsername);
+                        binding.editEmailname.setText(newEmail);
+
+                        Toast.makeText(SettingsActivity.this, "Info updated successfully", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(SettingsActivity.this, "Both fields are required", Toast.LENGTH_SHORT).show();
+                    }
+                })
+                .setNegativeButton("Cancel", (dialog, id) -> dialog.cancel());
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.white));
+
+        dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.white));
+
+    }
+
+
 
 }
