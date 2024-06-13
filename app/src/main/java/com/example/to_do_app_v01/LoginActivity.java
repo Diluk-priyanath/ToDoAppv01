@@ -48,7 +48,16 @@ public class LoginActivity extends AppCompatActivity {
             String registerUsername = sharedPreferences.getString("Username", "");
 
             if (email.equals(registeredUser) && pass.equals(registeredPass)) {
-                // To be implemented
+                Toast.makeText(LoginActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                SharedPreferences.Editor editor = sharedPreferences.edit();
+                editor.putBoolean("LoggedIn", true);
+                editor.apply();
+
+                Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
+                intent.putExtra("Email", email);
+                intent.putExtra("Username", registerUsername);
+                startActivity(intent);
+                finish();
             } else {
                 Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
             }
