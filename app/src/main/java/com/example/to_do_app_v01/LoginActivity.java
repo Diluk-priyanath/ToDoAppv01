@@ -42,7 +42,17 @@ public class LoginActivity extends AppCompatActivity {
                 return;
             }
 
-            // To be implemented
+            SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+            String registeredUser = sharedPreferences.getString("Email", "");
+            String registeredPass = sharedPreferences.getString("Password", "");
+            String registerUsername = sharedPreferences.getString("Username", "");
+
+            if (email.equals(registeredUser) && pass.equals(registeredPass)) {
+                // To be implemented
+            } else {
+                Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
+            }
+
         });
 
 
