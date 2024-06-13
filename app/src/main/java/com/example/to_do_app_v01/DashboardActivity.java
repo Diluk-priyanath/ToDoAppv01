@@ -36,4 +36,13 @@ public class DashboardActivity extends AppCompatActivity {
 
     binding.textViewName.setText(registerUsername);
 
+    sharedPrefManager = new sharedPreferences(this);
+
+    // Load saved to-do items
+    ArrayList<String> savedItems = sharedPrefManager.getTodoList();
+    for (String item : savedItems) {
+        todoData todoData = new todoData(item, R.drawable.edit, R.drawable.delete);
+        dataArrayList.add(todoData);
+    }
+
 }
