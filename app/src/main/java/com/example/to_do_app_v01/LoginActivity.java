@@ -21,5 +21,11 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+
+        createOne = findViewById(R.id.signup);
+        enter_email = findViewById(R.id.textInputEmail);
+        password = findViewById(R.id.textInputPassword);
+        login = findViewById(R.id.btn_lg);
+
     }
 }
