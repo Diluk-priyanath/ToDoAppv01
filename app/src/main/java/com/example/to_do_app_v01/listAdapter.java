@@ -61,5 +61,42 @@ public class listAdapter extends ArrayAdapter<todoData> {
         return view;
     }
 
+    private void showEditItemDialog(int position, todoData todoData) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.CustomAlertDialog);
+        builder.setTitle("Edit " + todoData.todoItem);
+
+        final View customLayout = LayoutInflater.from(getContext()).inflate(R.layout.add_item_dialog, null);
+        builder.setView(customLayout);
+
+        EditText editTextItem = customLayout.findViewById(R.id.edit_text_item);
+        editTextItem.setText(todoData.todoItem);
+
+        builder.setPositiveButton("Update", (dialog, which) -> {
+            String newItem = editTextItem.getText().toString();
+
+            if (!newItem.isEmpty()) {
+                ArrayList<String> currentList = sharedPrefManager.getTodoList();
+                currentList.set(currentList.indexOf(todoData.todoItem), newItem);
+                todoData.todoItem = newItem;
+                dataArrayList.set(position, todoData);
+                sharedPrefManager.saveTodoList(currentList);
+
+                notifyDataSetChanged();
+                Toast.makeText(getContext().getApplicationContext(), "Item updated: " + newItem, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getContext().getApplicationContext(), "Item cannot be empty", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getContext().getResources().getColor(R.color.white));
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getContext().getResources().getColor(R.color.white));
+    }
+
+
 
 }
