@@ -18,5 +18,16 @@ import com.example.to_do_app_v01.databinding.ActivityDashboardBinding;
 import java.util.ArrayList;
 
 public class DashboardActivity extends AppCompatActivity {
+    ActivityDashboardBinding binding;
+    listAdapter listAdapter;
+    ArrayList<todoData> dataArrayList = new ArrayList<>();
+    sharedPreferences sharedPrefManager;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = ActivityDashboardBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+    }
 
 }
