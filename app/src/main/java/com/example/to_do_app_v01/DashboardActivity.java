@@ -69,13 +69,54 @@ public class DashboardActivity extends AppCompatActivity {
             }
         });
 
-
     }
 
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private void showAddItemDialog() {
+        // Create an AlertDialog builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomAlertDialog);
 
+        // Inflate the custom layout/view
+        final View customLayout = getLayoutInflater().inflate(R.layout.add_item_dialog, null);
+        builder.setView(customLayout);
 
+        // Set the title
+        builder.setTitle("Add an item");
 
+        // Add action buttons
+        builder.setPositiveButton("Add", (dialog, which) -> {
+            // Get the input from EditText
+            EditText editTextItem = customLayout.findViewById(R.id.edit_text_item);
+            String item = editTextItem.getText().toString();
 
+            // Handle the "Add" button click
+            if (!item.isEmpty()) {
+                ArrayList<String> currentList = sharedPrefManager.getTodoList();
+                currentList.add(item);
+                sharedPrefManager.saveTodoList(currentList);
+
+                // Update the ListView
+                todoData newTodoData = new todoData(item, R.drawable.edit, R.drawable.delete);
+                dataArrayList.add(newTodoData);
+                listAdapter.notifyDataSetChanged();
+
+                Toast.makeText(this, "Item added: " + item, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(this, "Item cannot be empty", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        builder.setNegativeButton("Cancel", (dialog, which) -> {
+            dialog.cancel();
+        });
+
+        // Create and show the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.white));
+        dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.white));
+    }
 
 
 
