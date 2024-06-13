@@ -13,4 +13,9 @@ public class sharedPreferences {
     private SharedPreferences sharedPreferences;
     private SharedPreferences.Editor editor;
 
+    public sharedPreferences(Context context) {
+        sharedPreferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+    }
+
 }
