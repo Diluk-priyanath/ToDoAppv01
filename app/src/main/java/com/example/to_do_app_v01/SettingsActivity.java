@@ -48,4 +48,15 @@ public class SettingsActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent intent = new Intent(SettingsActivity.this, DashboardActivity.class);
+        intent.putExtra("Email", email);
+        intent.putExtra("Username", registerUsername);
+        startActivity(intent);
+        finish();
+    }
+
+
 }
