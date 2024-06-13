@@ -26,6 +26,16 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivitySettingsBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        email = getIntent().getStringExtra("Email");
+        registerUsername = getIntent().getStringExtra("Username");
+
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        email = sharedPreferences.getString("Email", email);
+        registerUsername = sharedPreferences.getString("Username", registerUsername);
+
+        binding.editUsername.setText(registerUsername);
+        binding.editEmailname.setText(email);
     }
 
 }
