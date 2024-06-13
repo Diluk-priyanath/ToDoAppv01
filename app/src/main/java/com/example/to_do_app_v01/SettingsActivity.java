@@ -17,4 +17,15 @@ import com.example.to_do_app_v01.databinding.ActivitySettingsBinding;
 
 public class SettingsActivity extends AppCompatActivity {
 
+    ActivitySettingsBinding binding;
+    String email;
+    String registerUsername;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        binding = ActivitySettingsBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+    }
+
 }
