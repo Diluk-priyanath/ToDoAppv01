@@ -49,4 +49,14 @@ public class DashboardActivity extends AppCompatActivity {
     binding.todoitemlistview.setAdapter(listAdapter);
     binding.todoitemlistview.setClickable(false);
 
+    binding.imgAdd.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            showAddItemDialog();
+        }
+    });
+
+
+
+
 }
