@@ -58,5 +58,40 @@ public class SettingsActivity extends AppCompatActivity {
         finish();
     }
 
+    private void showLogoutDialog() {
+        // Create an AlertDialog builder
+        AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.CustomAlertDialog);
+
+        // Set the title
+        builder.setTitle("Logout");
+
+        builder.setMessage("Really want to logout ?");
+
+        // Add action buttons
+        builder.setPositiveButton("Yes", (dialog, which) -> {
+            SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putBoolean("LoggedIn", false);
+            editor.apply();
+
+            Intent intent = new Intent(SettingsActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+            Toast.makeText(SettingsActivity.this, "Logged out successfully!", Toast.LENGTH_LONG).show();
+        });
+
+        builder.setNegativeButton("No", (dialog, which) -> {
+            dialog.cancel();
+        });
+
+        // Create and show the AlertDialog
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        dialog.getButton(DialogInterface.BUTTON_POSITIVE).setTextColor(getResources().getColor(R.color.white));
+        dialog.getButton(DialogInterface.BUTTON_NEGATIVE).setTextColor(getResources().getColor(R.color.white));
+    }
+
+
 
 }
