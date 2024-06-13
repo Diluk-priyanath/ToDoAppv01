@@ -40,6 +40,12 @@ public class SettingsActivity extends AppCompatActivity {
         binding.btnLgOut.setOnClickListener(v -> showLogoutDialog());
 
         binding.btnEditinfo.setOnClickListener(v -> showEditInfoDialog());
+
+        binding.devInfo.setOnClickListener(v -> {
+            Intent intent = new Intent(SettingsActivity.this, DevinfoActivity.class);
+            startActivity(intent);
+        });
+
     }
 
 }
