@@ -18,4 +18,17 @@ public class sharedPreferences {
         editor = sharedPreferences.edit();
     }
 
+    public void saveTodoList(ArrayList<String> todoList) {
+        Set<String> set = new HashSet<>(todoList);
+        editor.putStringSet(KEY_TODO_LIST, set);
+        editor.apply();
+    }
+
+    public ArrayList<String> getTodoList() {
+        Set<String> set = sharedPreferences.getStringSet(KEY_TODO_LIST, new HashSet<>());
+        return new ArrayList<>(set);
+    }
+
+
+
 }
