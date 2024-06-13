@@ -27,5 +27,12 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.textInputPassword);
         login = findViewById(R.id.btn_lg);
 
+        createOne.setOnClickListener(v -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
+            finish();
+        });
+
+
     }
 }
