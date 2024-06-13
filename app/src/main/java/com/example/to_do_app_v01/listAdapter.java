@@ -27,4 +27,39 @@ public class listAdapter extends ArrayAdapter<todoData> {
 
     }
 
+    @NonNull
+    @Override
+    public View getView(int position, @Nullable View view, @NonNull ViewGroup parent) {
+        todoData todoData = getItem(position);
+
+        if(view == null) {
+            view = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+        }
+
+        TextView todoItem = view.findViewById(R.id.txt_todoname);
+        ImageView edit = view.findViewById(R.id.img_edit);
+        ImageView delete = view.findViewById(R.id.img_delete);
+
+        todoItem.setText(todoData.todoItem);
+        edit.setImageResource(todoData.edit);
+        delete.setImageResource(todoData.delete);
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showEditItemDialog(position, todoData);
+            }
+        });
+
+        delete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showDeleteItemDialog(position, todoData);
+            }
+        });
+
+        return view;
+    }
+
+
 }
