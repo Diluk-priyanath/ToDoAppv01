@@ -30,4 +30,10 @@ public class DashboardActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
     }
 
+    SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+    String registerUsername = sharedPreferences.getString("Username", "");
+    String email = sharedPreferences.getString("Email", "");
+
+    binding.textViewName.setText(registerUsername);
+
 }
