@@ -33,6 +33,11 @@ public class LoginActivity extends AppCompatActivity {
             finish();
         });
 
+        login.setOnClickListener(v -> {
+            // To be implemented
+        });
+
+
 
     }
 }
