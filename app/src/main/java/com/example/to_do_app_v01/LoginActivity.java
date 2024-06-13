@@ -34,6 +34,14 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         login.setOnClickListener(v -> {
+            String email = enter_email.getText().toString();
+            String pass = password.getText().toString();
+
+            if (email.isEmpty() || pass.isEmpty()) {
+                Toast.makeText(LoginActivity.this, "All fields are required", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
             // To be implemented
         });
 
