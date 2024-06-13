@@ -36,6 +36,8 @@ public class SettingsActivity extends AppCompatActivity {
 
         binding.editUsername.setText(registerUsername);
         binding.editEmailname.setText(email);
+
+        binding.btnLgOut.setOnClickListener(v -> showLogoutDialog());
     }
 
 }
