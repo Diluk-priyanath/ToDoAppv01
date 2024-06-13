@@ -97,6 +97,32 @@ public class listAdapter extends ArrayAdapter<todoData> {
         dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getContext().getResources().getColor(R.color.white));
     }
 
+    private void showDeleteItemDialog(int position, todoData todoData) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), R.style.CustomAlertDialog);
+        builder.setTitle("Delete " + todoData.todoItem);
+        builder.setMessage("Really want to delete " + todoData.todoItem + "?");
+
+        builder.setPositiveButton("Delete", (dialog, which) -> {
+            dataArrayList.remove(position);
+
+            ArrayList<String> currentList = sharedPrefManager.getTodoList();
+            currentList.remove(todoData.todoItem);
+            sharedPrefManager.saveTodoList(currentList);
+
+            notifyDataSetChanged();
+            Toast.makeText(getContext().getApplicationContext(), todoData.todoItem + " deleted", Toast.LENGTH_SHORT).show();
+        });
+
+        builder.setNegativeButton("Cancel", (dialog, which) -> dialog.cancel());
+
+        AlertDialog dialog = builder.create();
+        dialog.show();
+
+        dialog.getButton(AlertDialog.BUTTON_POSITIVE).setTextColor(getContext().getResources().getColor(R.color.white));
+        dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getContext().getResources().getColor(R.color.white));
+    }
+
+
 
 
 }
