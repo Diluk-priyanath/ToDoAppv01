@@ -45,4 +45,8 @@ public class DashboardActivity extends AppCompatActivity {
         dataArrayList.add(todoData);
     }
 
+    listAdapter = new listAdapter(DashboardActivity.this, dataArrayList);
+    binding.todoitemlistview.setAdapter(listAdapter);
+    binding.todoitemlistview.setClickable(false);
+
 }
