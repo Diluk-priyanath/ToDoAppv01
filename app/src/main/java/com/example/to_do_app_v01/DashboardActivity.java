@@ -28,33 +28,54 @@ public class DashboardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityDashboardBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-    }
 
-    SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
-    String registerUsername = sharedPreferences.getString("Username", "");
-    String email = sharedPreferences.getString("Email", "");
 
-    binding.textViewName.setText(registerUsername);
+        SharedPreferences sharedPreferences = getSharedPreferences("UserPrefs", Context.MODE_PRIVATE);
+        String registerUsername = sharedPreferences.getString("Username", "");
+        String email = sharedPreferences.getString("Email", "");
 
-    sharedPrefManager = new sharedPreferences(this);
+        binding.textViewName.setText(registerUsername);
 
-    // Load saved to-do items
-    ArrayList<String> savedItems = sharedPrefManager.getTodoList();
-    for (String item : savedItems) {
-        todoData todoData = new todoData(item, R.drawable.edit, R.drawable.delete);
-        dataArrayList.add(todoData);
-    }
+        sharedPrefManager = new sharedPreferences(this);
 
-    listAdapter = new listAdapter(DashboardActivity.this, dataArrayList);
-    binding.todoitemlistview.setAdapter(listAdapter);
-    binding.todoitemlistview.setClickable(false);
-
-    binding.imgAdd.setOnClickListener(new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            showAddItemDialog();
+        // Load saved to-do items
+        ArrayList<String> savedItems = sharedPrefManager.getTodoList();
+        for (String item : savedItems) {
+            todoData todoData = new todoData(item, R.drawable.edit, R.drawable.delete);
+            dataArrayList.add(todoData);
         }
-    });
+
+        listAdapter = new listAdapter(DashboardActivity.this, dataArrayList);
+        binding.todoitemlistview.setAdapter(listAdapter);
+        binding.todoitemlistview.setClickable(false);
+
+
+        binding.imgAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showAddItemDialog();
+            }
+        });
+
+
+        binding.settings.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DashboardActivity.this, SettingsActivity.class);
+                intent.putExtra("Email", email);
+                intent.putExtra("Username", registerUsername);
+                startActivity(intent);
+                finish();
+            }
+        });
+
+
+    }
+
+
+
+
+
 
 
 
