@@ -122,7 +122,4 @@ public class listAdapter extends ArrayAdapter<todoData> {
         dialog.getButton(AlertDialog.BUTTON_NEGATIVE).setTextColor(getContext().getResources().getColor(R.color.white));
     }
 
-
-
-
 }
