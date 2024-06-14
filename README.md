@@ -1,4 +1,4 @@
-# Todo Application
+# Todo Application.
 
 Welcome to the Todo Application! This mobile app is designed to provide users with a seamless and convenient way to manage their tasks on their mobile devices. With secure user authentication and local storage, the app ensures a reliable and user-friendly experience.
 
