@@ -58,7 +58,7 @@ We welcome contributions to enhance the Todo Application! If you have any ideas,
 
 2. **Clone the Forked Repository:**
    ```bash
-   git clone https://github.com/your-username/ToDoAppv01.git
+   git clone https://github.com/Diluk-priyanath/ToDoAppv01.git
    ```
 
 3. **Create a New Branch:**
