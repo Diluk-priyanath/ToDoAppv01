@@ -92,7 +92,7 @@ Here are some screenshots of the ToDo application:
 
 ## Splash Screen
 
-![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/371371e2-f1a2-41e1-8821-d4e6fb439850)
+![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/371371e2-f1a2-41e1-8821-d4e6fb439850 | width=400)
 
 
 ## Sign In Screen
