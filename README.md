@@ -97,25 +97,28 @@ Here are some screenshots of the ToDo application:
 
 ## Sign In Screen
 
-![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/ecf50fdb-2887-4c88-bc36-9a68c83c28c9)
+<img src="https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/ecf50fdb-2887-4c88-bc36-9a68c83c28c9" alt="Screenshot" width="400"/>
 
 
 ## Sign Up Screen
 
-![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/89c26ce2-7265-4273-b38f-5b9c144265fa)
+<img src="https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/89c26ce2-7265-4273-b38f-5b9c144265fa" alt="Screenshot" width="400"/>
+
 
 ## Dashboard
 
-![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/0ba48336-d383-4fb9-ad18-3f720a4804ba)
+<img src="https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/0ba48336-d383-4fb9-ad18-3f720a4804ba" alt="Screenshot" width="400"/>
 
 
 ## User Profile
 
-![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/ec90de2e-79d3-40d8-8a38-37c54414846c)
+<img src="https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/ec90de2e-79d3-40d8-8a38-37c54414846c" alt="Screenshot" width="400"/>
 
 
 ## Developer Info
 
-![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/40583daf-f796-467b-8793-93051efc36e6)
+<img src="https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/052958a8-7ced-4caa-84e8-9966dbca6767" alt="Screenshot" width="400"/>
+
+
 
 
