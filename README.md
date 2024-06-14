@@ -85,3 +85,37 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Thank you to all the contributors and users who support this project. Your feedback and contributions help make this application better!
 
 ---
+
+## Screenshots
+
+Here are some screenshots of the ToDo application:
+
+## Splash Screen
+
+![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/371371e2-f1a2-41e1-8821-d4e6fb439850)
+
+
+## Sign In Screen
+
+![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/ecf50fdb-2887-4c88-bc36-9a68c83c28c9)
+
+
+## Sign Up Screen
+
+![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/89c26ce2-7265-4273-b38f-5b9c144265fa)
+
+## Dashboard
+
+![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/0ba48336-d383-4fb9-ad18-3f720a4804ba)
+
+
+## User Profile
+
+![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/ec90de2e-79d3-40d8-8a38-37c54414846c)
+
+
+## Developer Info
+
+![image](https://github.com/Diluk-priyanath/ToDoAppv01/assets/121813107/40583daf-f796-467b-8793-93051efc36e6)
+
+
